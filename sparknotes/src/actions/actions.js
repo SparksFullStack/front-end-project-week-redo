@@ -24,8 +24,11 @@ export const updateNote = (newTitle, newContent, id) => {
 }
 
 export const deleteNote = (id) => {
+    console.log(id);
     return {
         type: DELETE_NOTE,
-        id: id,
+        payload: {
+            id: id,
+        }
     }
 }

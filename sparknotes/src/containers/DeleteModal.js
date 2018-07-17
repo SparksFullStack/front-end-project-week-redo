@@ -4,18 +4,11 @@ import { connect } from 'react-redux';
 import { deleteNote } from '../actions/actions';
 import { bindActionCreators } from 'redux';
 import './DeleteModal.css';
+import { NavLink } from 'react-router-dom';
 
 class DeleteModal extends React.Component {
     constructor(props){
         super(props);
-
-        this.state = {
-            modalIsOpen: false,
-        }
-    }
-
-    closeModal = () => {
-        this.setState({ modalIsOpen: false });
     }
 
     render(){
@@ -30,8 +23,8 @@ class DeleteModal extends React.Component {
                     <p className="deleteModal__text">Are you sure you want to delete this?</p>
 
                     <div className="deleteModal__buttons">
-                        <button style={styles.delete}>Delete</button>
-                        <button style={styles.no}>No</button>
+                        <button onClick={() => this.props.deleteNote(this.props.id)} style={styles.delete}>Delete</button>
+                        <button onClick={this.props.closeModal} style={styles.no}>No</button>
                     </div>
 
                 </Modal>

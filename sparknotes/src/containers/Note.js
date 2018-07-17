@@ -9,12 +9,16 @@ class Note extends Component {
         super(props);
 
         this.state = {
-            modalIsOpen: true
+            modalIsOpen: false
         }
     }
 
     openModal = () => {
         this.setState({ modalIsOpen: true })
+    }
+
+    closeModal = () => {
+        this.setState({ modalIsOpen: false });
     }
 
     render(){
@@ -42,7 +46,7 @@ class Note extends Component {
                         <p>{this.props.currentNote.content}</p>
                     </div>
 
-                    <DeleteModal isOpen={this.state.modalIsOpen} />
+                    <DeleteModal isOpen={this.state.modalIsOpen} closeModal={this.closeModal} id={this.props.location.state.id} />
                 </div>
             )
         }
