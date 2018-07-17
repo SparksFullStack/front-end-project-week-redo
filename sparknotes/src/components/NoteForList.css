@@ -1,0 +1,31 @@
+.note {
+    border: 1px solid grey;
+    background-color: white;
+    width: 28%;
+    margin-bottom: 30px;
+    display: block;
+    height: 120px;
+}
+
+.note__title {
+    width: 85%;
+    margin: 10px auto 0 auto;
+    padding-bottom: 8px;
+    border-bottom: 1px solid grey;
+}
+
+.note__content__truncate {
+    display: flex;
+}
+
+.note__content {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    height: 40%;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

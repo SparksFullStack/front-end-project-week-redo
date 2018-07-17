@@ -1,0 +1,24 @@
+.individualNote {
+    background-color: rgb(231, 229, 229);
+    width: 80%;
+}
+
+.individualNote__buttons {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 35px;
+}
+
+.individualNote__buttons p {
+    display: inline;
+    text-align: right;
+    margin-left: 15px;
+}
+
+.individualNote__title {
+    margin-left: 25px;
+}
+
+.individualNote__content {
+    margin-left: 25px;
+}

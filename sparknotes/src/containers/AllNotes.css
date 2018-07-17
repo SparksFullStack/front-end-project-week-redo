@@ -1,0 +1,19 @@
+.allNotes {
+    background-color: rgb(231, 229, 229);
+    width: 80%;
+}
+
+.allNotes__content {
+    margin-top: 6%;
+}
+
+.allNotes__content__header {
+    margin-left: 25px;
+}
+
+.allNotes__content__notes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
