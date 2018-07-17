@@ -1,0 +1,33 @@
+.editNote {
+    background-color: rgb(231, 229, 229);
+    width: 80%;
+}
+
+.editNote__title {
+    margin-top: 55px;
+    margin-left: 25px;
+}
+
+.editNote__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.editNote__form__title {
+    width: 40%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 9px 8px;
+}
+
+.editNote__form__content {
+    width: 92%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 9px 8px;
+}
+
+
+.editNote__button {
+    margin-left: 20px;
+}

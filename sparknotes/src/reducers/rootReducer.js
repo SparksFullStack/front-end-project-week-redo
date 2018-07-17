@@ -1,4 +1,4 @@
-import { CREATE_NOTE } from '../actions/actions';
+import { CREATE_NOTE, UPDATE_NOTE } from '../actions/actions';
 
 const initialState = {
     notes: [
@@ -15,18 +15,28 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch(action.type) {
         case CREATE_NOTE:
-            const newId = state.currentId + 1;
-            const newNote = {
+            const createNoteNewId = state.currentId + 1;
+            const createNoteNewNote = {
                 title: action.payload.title,
                 content: action.payload.content,
-                id: newId,
+                id: createNoteNewId,
             };
-            const newArray = state.notes.concat(newNote);
-            console.log(newArray)
+            const createNoteNewArray = state.notes.concat(createNoteNewNote);
             return {
-                notes: newArray,
-                currentId: newId
+                notes: createNoteNewArray,
+                currentId: createNoteNewId
             }
+        case UPDATE_NOTE: 
+            let updateNoteNewState = Object.assign({}, state);
+            updateNoteNewState.notes.map(note => {
+                if (note.id === action.payload.id){
+                    note.title = action.payload.title;
+                    note.content = action.payload.content;
+                    return note;
+                } else {
+                    return note;
+                }
+            })
         default:
             return state;
     }

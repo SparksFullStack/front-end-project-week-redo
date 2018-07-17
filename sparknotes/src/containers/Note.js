@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./Note.css";
+import { NavLink } from 'react-router-dom';
 
 class Note extends Component {
     constructor(props){
@@ -14,7 +15,15 @@ class Note extends Component {
             return(
                 <div className="individualNote">
                     <div className="individualNote__buttons">
-                        <p>edit</p>
+                        <NavLink to={{pathname: '/editnote', state: {
+                            id: this.props.location.state.id,
+                            note: {
+                                title: this.props.currentNote.title,
+                                content: this.props.currentNote.content,
+                            }
+                        }}}>
+                            <p>edit</p>
+                        </NavLink>
                         <p>delete</p>
                     </div>
     

@@ -3,7 +3,6 @@ import "./NoteForList.css";
 import { NavLink } from 'react-router-dom';
 
 const NoteForList = props => {
-    console.log(props.note.id)
     return (
                 <div className="note">
                     <NavLink to={{pathname: '/note', state: {id: props.note.id}}}>
