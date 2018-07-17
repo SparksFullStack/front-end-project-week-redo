@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Menu.css";
+import { NavLink } from 'react-router-dom';
 
 const Menu = () => {
     return (
@@ -8,11 +9,15 @@ const Menu = () => {
             <h1 className="menu__header">Lambda Notes</h1>
             <div className="menu__buttons">
                 <div className="menu__buttons__button">
-                    <p>View Your Notes</p>
+                    <NavLink to='/'>
+                        <p>View Your Notes</p>
+                    </NavLink>
                 </div>
 
                 <div className="menu__buttons__button">
-                    <p>+ Create New Notes</p>
+                    <NavLink to='/createnote'>
+                        <p>+ Create New Notes</p>
+                    </NavLink>
                 </div>
             </div>
         </div>

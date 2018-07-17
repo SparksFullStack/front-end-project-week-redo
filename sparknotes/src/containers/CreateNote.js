@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import "./CreateNote.css";
 import { bindActionCreators } from 'redux';
 import { CREATE_NOTE, createNote } from '../actions/actions';
+import { NavLink } from 'react-router-dom';
 
 
 class CreateNote extends Component {
@@ -50,7 +51,9 @@ class CreateNote extends Component {
                     style={styles.buttonStyles} 
                     className="createNote__button"
                     onClick={() => this.props.createNote(this.state.titleForm, this.state.contentForm)}>
-                    <p>Save</p>
+                    <NavLink to='/'>
+                        <p>Save</p>
+                    </NavLink>
                 </div>
             </div>
         )
