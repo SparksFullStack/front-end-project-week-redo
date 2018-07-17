@@ -1,4 +1,4 @@
-import { CREATE_NOTE, UPDATE_NOTE } from '../actions/actions';
+import { CREATE_NOTE, UPDATE_NOTE, DELETE_NOTE } from '../actions/actions';
 
 const initialState = {
     notes: [
@@ -26,6 +26,7 @@ const rootReducer = (state = initialState, action) => {
                 notes: createNoteNewArray,
                 currentId: createNoteNewId
             }
+
         case UPDATE_NOTE: 
             let updateNoteNewState = Object.assign({}, state);
             updateNoteNewState.notes.map(note => {
@@ -37,6 +38,15 @@ const rootReducer = (state = initialState, action) => {
                     return note;
                 }
             })
+
+        case DELETE_NOTE:
+            let deleteNoteNewState = Object.assign({}, state);
+            deleteNoteNewState.notes.map(note => {
+                if (note.id !== action.payload.id){
+                    return note;
+                }
+            })
+            
         default:
             return state;
     }

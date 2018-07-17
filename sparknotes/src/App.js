@@ -13,10 +13,11 @@ import EditNote from './containers/EditNote';
 //components
 import Menu from './components/Menu';
 
-
 class App extends Component {
   render() {
     return (
+
+      // <DeleteModal />
       <div className="App">
         <Route path="/" component={Menu} />
         <Route path="/" exact component={AllNotes} />

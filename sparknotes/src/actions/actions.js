@@ -1,5 +1,6 @@
 export const CREATE_NOTE = "CREATE_NOTE";
 export const UPDATE_NOTE = "UPDATE_NOTE";
+export const DELETE_NOTE = "DELETE_NOTE";
 
 export const createNote = (newTitle, newContent) => {
     return {
@@ -19,5 +20,12 @@ export const updateNote = (newTitle, newContent, id) => {
             content: newContent,
             id: id,
         }
+    }
+}
+
+export const deleteNote = (id) => {
+    return {
+        type: DELETE_NOTE,
+        id: id,
     }
 }

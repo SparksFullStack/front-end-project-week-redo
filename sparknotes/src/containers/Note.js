@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./Note.css";
 import { NavLink } from 'react-router-dom';
+import DeleteModal from '../containers/DeleteModal';
 
 class Note extends Component {
     constructor(props){
         super(props);
 
-        this.state = {}
+        this.state = {
+            modalIsOpen: true
+        }
+    }
+
+    openModal = () => {
+        this.setState({ modalIsOpen: true })
     }
 
     render(){
-        console.log(this.props.location);
         if (this.props.currentNote){
             return(
                 <div className="individualNote">
@@ -25,7 +31,7 @@ class Note extends Component {
                         }}}>
                             <p>edit</p>
                         </NavLink>
-                        <p>delete</p>
+                        <p onClick={this.openModal}>delete</p>
                     </div>
     
                     <div className="individualNote__title">
@@ -35,6 +41,8 @@ class Note extends Component {
                     <div className="individualNote__content">
                         <p>{this.props.currentNote.content}</p>
                     </div>
+
+                    <DeleteModal isOpen={this.state.modalIsOpen} />
                 </div>
             )
         }
