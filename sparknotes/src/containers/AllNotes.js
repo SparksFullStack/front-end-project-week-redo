@@ -13,7 +13,7 @@ class AllNotes extends Component {
     renderNotes = () => {
         return this.props.notes.map(note => {
             return (
-                    <NoteForList key={note.id} note={note} />
+                <NoteForList key={note.id} note={note} />
             )
         })
     }
