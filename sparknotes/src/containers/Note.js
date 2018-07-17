@@ -11,6 +11,7 @@ class Note extends Component {
     }
 
     render(){
+        console.log(this.props.location);
         if (this.props.currentNote){
             return(
                 <div className="individualNote">

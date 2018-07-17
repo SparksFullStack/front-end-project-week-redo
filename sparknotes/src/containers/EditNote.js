@@ -63,7 +63,10 @@ class EditNote extends Component {
                     style={styles.buttonStyles} 
                     className="editNote__button"
                     onClick={() => this.props.updateNote(this.state.title, this.state.content, this.state.id)}>
-                    <NavLink to='/'>
+                    <NavLink to={{
+                        pathname: '/note',
+                        state: this.state,
+                    }}>
                         <p>Save</p>
                     </NavLink>
                 </div>
