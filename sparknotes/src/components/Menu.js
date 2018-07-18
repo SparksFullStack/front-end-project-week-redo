@@ -6,7 +6,7 @@ const Menu = () => {
     return (
         <div className="menu">
             
-            <h1 className="menu__header">Lambda Notes</h1>
+            <h1 className="menu__header">SparkNotes</h1>
             <div className="menu__buttons">
                 <div className="menu__buttons__button">
                     <NavLink to='/'>

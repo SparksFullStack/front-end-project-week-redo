@@ -27,22 +27,24 @@ const rootReducer = (state = initialState, action) => {
                 currentId: createNoteNewId
             }
 
-        case UPDATE_NOTE: 
-            let updateNoteNewState = Object.assign({}, state);
-            updateNoteNewState.notes.map(note => {
-                if (note.id === action.payload.id){
-                    note.title = action.payload.title;
-                    note.content = action.payload.content;
-                    return note;
-                } else {
-                    return note;
+            case UPDATE_NOTE: 
+            const updateNoteNewState = Object.assign({}, state);
+            const updateNoteNewArray = updateNoteNewState.notes.map(note => {
+                if (note.id !== action.payload.id) return note;
+                else {
+                    return {
+                        title: action.payload.title,
+                        content: action.payload.content,
+                        id: action.payload.id,
+                    }
                 }
             })
+            updateNoteNewState.notes = updateNoteNewArray;
+            return updateNoteNewState;
 
         case DELETE_NOTE:
-            console.log(action.payload.id);
-            const deleteNoteNewArray = state.notes.filter(note => note.id !== action.payload.id);
             const deleteNoteNewState = Object.assign({}, state);
+            const deleteNoteNewArray = deleteNoteNewState.notes.filter(note => note.id !== action.payload.id);
             deleteNoteNewState.notes = deleteNoteNewArray;
             return deleteNoteNewState;
         default:

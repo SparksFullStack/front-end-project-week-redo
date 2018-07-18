@@ -22,15 +22,15 @@ class Note extends Component {
     }
 
     render(){
-        if (this.props.currentNote){
+        if (this.props.location.state.note){
             return(
                 <div className="individualNote">
                     <div className="individualNote__buttons">
                         <NavLink to={{pathname: '/editnote', state: {
-                            id: this.props.location.state.id,
+                            id: this.props.location.state.note.id,
                             note: {
-                                title: this.props.currentNote.title,
-                                content: this.props.currentNote.content,
+                                title: this.props.location.state.note.title,
+                                content: this.props.location.state.note.content,
                             }
                         }}}>
                             <p>edit</p>
@@ -39,14 +39,14 @@ class Note extends Component {
                     </div>
     
                     <div className="individualNote__title">
-                        <h2>{this.props.currentNote.title}</h2>
+                        <h2>{this.props.location.state.note.title}</h2>
                     </div>
     
                     <div className="individualNote__content">
-                        <p>{this.props.currentNote.content}</p>
+                        <p>{this.props.location.state.note.content}</p>
                     </div>
 
-                    <DeleteModal isOpen={this.state.modalIsOpen} closeModal={this.closeModal} id={this.props.location.state.id} />
+                    <DeleteModal isOpen={this.state.modalIsOpen} closeModal={this.closeModal} id={this.props.location.state.note.id} />
                 </div>
             )
         }
@@ -61,14 +61,4 @@ class Note extends Component {
     }
 }
 
-const mapStateToProps = ({ notes }, { location }) => {
-    if (!location.state){
-        return {
-            currentNote: undefined
-        }
-    } else return {
-        currentNote: notes[location.state.id]
-    }
-}
-
-export default connect(mapStateToProps)(Note);
+export default Note;

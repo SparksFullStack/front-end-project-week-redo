@@ -6,12 +6,12 @@ import { Route } from 'react-router-dom';
 
 //containers
 import AllNotes from './containers/AllNotes';
-import Note from './containers/Note';
 import CreateNote from './containers/CreateNote';
 import EditNote from './containers/EditNote';
 
 //components
 import Menu from './components/Menu';
+import Note from './components/Note';
 
 class App extends Component {
   render() {

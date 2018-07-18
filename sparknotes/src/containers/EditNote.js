@@ -35,7 +35,6 @@ class EditNote extends Component {
     }
 
     render(){
-        console.log(this.state.content);
         return(
             <div className='editNote'>
                 <div className="editNote__title">
@@ -65,7 +64,11 @@ class EditNote extends Component {
                     onClick={() => this.props.updateNote(this.state.title, this.state.content, this.state.id)}>
                     <NavLink to={{
                         pathname: '/note',
-                        state: this.state,
+                        state: {note :{
+                            title: this.state.title,
+                            content: this.state.content,
+                            id: this.state.id,
+                        }},
                     }}>
                         <p>Save</p>
                     </NavLink>
