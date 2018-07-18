@@ -40,12 +40,11 @@ const rootReducer = (state = initialState, action) => {
             })
 
         case DELETE_NOTE:
-            let deleteNoteNewState = Object.assign({}, state);
-            let newArray = deleteNoteNewState.notes.concat()
-            newArray.map(note => {if (note.id !== action.payload.id) return note});
-            console.log(newArray)
+            console.log(action.payload.id);
+            const deleteNoteNewArray = state.notes.filter(note => note.id !== action.payload.id);
+            const deleteNoteNewState = Object.assign({}, state);
+            deleteNoteNewState.notes = deleteNoteNewArray;
             return deleteNoteNewState;
-
         default:
             return state;
     }

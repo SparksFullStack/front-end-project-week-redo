@@ -23,7 +23,11 @@ class DeleteModal extends React.Component {
                     <p className="deleteModal__text">Are you sure you want to delete this?</p>
 
                     <div className="deleteModal__buttons">
-                        <button onClick={() => this.props.deleteNote(this.props.id)} style={styles.delete}>Delete</button>
+                        <div onClick={() => this.props.deleteNote(this.props.id)} style={styles.delete}>
+                            <NavLink to="/">
+                                <p>Delete</p>
+                            </NavLink>
+                        </div>
                         <button onClick={this.props.closeModal} style={styles.no}>No</button>
                     </div>
 
