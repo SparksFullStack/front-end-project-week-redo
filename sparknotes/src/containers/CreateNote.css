@@ -33,3 +33,9 @@
     margin-left: 20px;
 }
 
+@media (max-height: 900px){
+    .createNote__form {
+        height: 60%;
+    }
+}
+

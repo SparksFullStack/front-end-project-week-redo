@@ -32,3 +32,9 @@
 .editNote__button {
     margin-left: 20px;
 }
+
+@media (max-height: 900px){
+    .editNote__form {
+        height: 60%;
+    }
+}
