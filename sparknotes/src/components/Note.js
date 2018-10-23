@@ -51,7 +51,7 @@ class Note extends Component {
                     </div>
     
                     <div className="individualNote__content">
-                        <p>{this.props.location.state.note.content}</p>
+                        <p className="individualNote__content__text">{this.props.location.state.note.content}</p>
                     </div>
 
                     <DeleteModal isOpen={this.state.modalIsOpen} closeModal={this.closeModal} id={this.props.location.state.note.id} />

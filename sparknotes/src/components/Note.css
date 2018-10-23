@@ -22,3 +22,10 @@
 .individualNote__content {
     margin-left: 25px;
 }
+
+@media (max-width: 600px){
+    .individualNote__content__text {
+        font-size: 10px;
+        margin-right: 10px;
+    }
+}
