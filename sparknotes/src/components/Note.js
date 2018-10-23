@@ -3,6 +3,14 @@ import { connect } from 'react-redux';
 import "./Note.css";
 import { NavLink } from 'react-router-dom';
 import DeleteModal from '../containers/DeleteModal';
+import { Button } from 'reactstrap';
+
+const styles = {
+    editDeleteButtonStyles: {
+        width: '100px',
+        marginLeft: '10px',
+    }
+}
 
 class Note extends Component {
     constructor(props){
@@ -33,9 +41,9 @@ class Note extends Component {
                                 content: this.props.location.state.note.content,
                             }
                         }}}>
-                            <p>edit</p>
+                            <Button style={styles.editDeleteButtonStyles}>Edit</Button>
                         </NavLink>
-                        <p onClick={this.openModal}>delete</p>
+                        <Button style={styles.editDeleteButtonStyles} onClick={this.openModal}>delete</Button>
                     </div>
     
                     <div className="individualNote__title">

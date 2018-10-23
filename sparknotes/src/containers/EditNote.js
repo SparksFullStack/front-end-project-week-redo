@@ -5,6 +5,7 @@ import './EditNote.css';
 import { updateNote } from '../actions/actions';
 import { bindActionCreators } from 'redux';
 
+
 class EditNote extends Component {
     constructor(props){
         super(props);
