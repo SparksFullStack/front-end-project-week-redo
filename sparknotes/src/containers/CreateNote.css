@@ -11,6 +11,7 @@
 .createNote__form {
     display: flex;
     flex-direction: column;
+    height: 80%;
 }
 
 .createNote__form__title {

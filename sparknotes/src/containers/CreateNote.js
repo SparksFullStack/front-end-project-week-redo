@@ -52,7 +52,7 @@ class CreateNote extends Component {
                     className="createNote__button"
                     onClick={() => this.props.createNote(this.state.titleForm, this.state.contentForm)}>
                     <NavLink to='/'>
-                        <p>Save</p>
+                        <p style={{marginTop: '13px'}}>Save</p>
                     </NavLink>
                 </div>
             </div>

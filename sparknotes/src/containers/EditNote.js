@@ -71,7 +71,7 @@ class EditNote extends Component {
                             id: this.state.id,
                         }},
                     }}>
-                        <p>Save</p>
+                        <p style={{marginTop: '13px'}}>Save</p>
                     </NavLink>
                 </div>
             </div>
