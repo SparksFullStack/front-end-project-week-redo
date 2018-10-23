@@ -11,6 +11,7 @@
 .editNote__form {
     display: flex;
     flex-direction: column;
+    height: 80%;
 }
 
 .editNote__form__title {
